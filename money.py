@@ -6,7 +6,8 @@ class Currency:
     """
     Represents a currency. Does not contain any exchange rate info.
     """
-
+# Sets up the initial state of an object.
+# Note the initial argument of __self__.
     def __init__(self, name, code, symbol=None, digits=2):
         """
         Parameters:
@@ -15,7 +16,10 @@ class Currency:
         - symbol - optional symbol used to designate currency
         - digits -- number of significant digits used
         """
-        pass
+        self.name = name
+        self.code = code
+        self.symbol = symbol
+        self.digits = digits
 
     def __str__(self):
         """
