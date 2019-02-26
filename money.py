@@ -25,7 +25,7 @@ class Currency:
         """
         Should return the currency code, or code with symbol in parentheses.
         """
-        pass
+        return "({}, {})".format(self.code, self.symbol)
 
     def __eq__(self, other):
         """
@@ -55,7 +55,7 @@ class Money:
         Should use the currency symbol if available, else use the code.
         Use the currency digits to determine number of digits to show.
         """
-        pass
+        return "({}, {})".format(self.amount, self.currency)
 
     def __repr__(self):
         return f"<Money {str(self)}>"
