@@ -49,18 +49,18 @@ class Money:
         """
         self.amount = amount
         self.currency = currency
-###* ^^^PASSED!^^^
+
     def __str__(self):
         """
         Should use the currency symbol if available, else use the code.
         Use the currency digits to determine number of digits to show.
         """
-
-        if self.currency == 'USD':
-            return f"{Currency.symbol}{amount:.2f}"
-        else:
-            return f"{Currency.code}{amount:.2f}"
         
+        if self.currency.symbol == self.currency.symbol:
+            return f"{self.currency.symbol}{self.amount:.2f}"
+        else:
+            return f"{self.currency.code}{self.amount.digits}{self.amount:.3f}"
+###* ^^^PASSED!^^^      
         
 
     def __repr__(self):
@@ -80,13 +80,20 @@ class Money:
         """
         if self.currency == other.currency:
             amount = self.amount + other.amount
+            return amount
+        else:
+            raise DifferentCurrencyError()
 
     def sub(self, other):
         """
         Subtract two money objects of the same currency. If they have different
         currencies, raise a DifferentCurrencyError.
         """
-        pass
+        if self.currency == other.currency:
+            amount = self.amount - other.amount
+            return amount
+        else:
+            raise DifferentCurrencyError()
 
     def mul(self, multiplier):
         """

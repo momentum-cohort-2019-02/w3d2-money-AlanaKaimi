@@ -46,9 +46,9 @@ def test_dollars_to_str():
     assert str(one_dollar) == "$1.00"
 
 
-# def test_dinar_to_str():
-#     dinar = Money(7.5, BHD)
-#     assert str(dinar) == "BHD 7.500"
+def test_dinar_to_str():
+    dinar = Money(7.5, BHD)
+    assert str(dinar) == "BHD 7.500"
 
 
 # def test_money_equality():
