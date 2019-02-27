@@ -70,8 +70,6 @@ class Money:
         """
         return (type(self) == type(other) and self.amount == other.amount
                 and self.currency == other.currency)
-###* ^^^PASSED!^^^ 
-
 
     def add(self, other):
         """
@@ -79,8 +77,10 @@ class Money:
         currencies, raise a DifferentCurrencyError.
         """
         if self.currency == other.currency:
-            amount = self.amount + other.amount
-            return amount
+            self.amount += other.amount 
+
+            return self
+               
         else:
             raise DifferentCurrencyError()
 
@@ -90,10 +90,13 @@ class Money:
         currencies, raise a DifferentCurrencyError.
         """
         if self.currency == other.currency:
-            amount = self.amount - other.amount
-            return amount
+            self.amount -= other.amount 
+
+            return self
+               
         else:
             raise DifferentCurrencyError()
+###* ^^^PASSED!^^^ 
 
     def mul(self, multiplier):
         """
