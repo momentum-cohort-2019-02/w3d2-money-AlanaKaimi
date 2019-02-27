@@ -96,16 +96,19 @@ class Money:
                
         else:
             raise DifferentCurrencyError()
-###* ^^^PASSED!^^^ 
 
     def mul(self, multiplier):
         """
         Multiply a money object by a number to get a new money object.
         """
-        pass
+        self.amount *= multiplier
+        return self
 
     def div(self, divisor):
         """
         Divide a money object by a number to get a new money object.
         """
-        pass
+        self.amount /= divisor
+        return self
+
+###* ^^^PASSED!^^^ 
