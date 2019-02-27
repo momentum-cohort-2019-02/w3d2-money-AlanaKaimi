@@ -37,9 +37,6 @@ def test_create_money():
     one_dollar = Money(1, USD)
     assert one_dollar.amount == 1
     assert one_dollar.currency == USD
-###* ^^^PASSED!^^^
-
-###! TODO:
 
 def test_dollars_to_str():
     one_dollar = Money(1, USD)
@@ -51,16 +48,17 @@ def test_dinar_to_str():
     assert str(dinar) == "BHD 7.500"
 
 
-# def test_money_equality():
-#     assert Money(1, USD) == Money(1, USD)
-#     assert Money(2, USD) == Money(2, USD)
+def test_money_equality():
+    assert Money(1, USD) == Money(1, USD)
+    assert Money(2, USD) == Money(2, USD)
 
 
-# def test_money_inequality():
-#     assert Money(1, USD) != Money(2, USD)
-#     assert Money(2, USD) != Money(2, BHD)
+def test_money_inequality():
+    assert Money(1, USD) != Money(2, USD)
+    assert Money(2, USD) != Money(2, BHD)
+###* ^^^PASSED!^^^
 
-
+###! TODO:
 # def test_add_money():
 #     assert Money(1, USD).add(Money(1, USD)) == Money(2, USD)
 #     assert Money(1, USD).add(Money(2.5, USD)) == Money(3.5, USD)

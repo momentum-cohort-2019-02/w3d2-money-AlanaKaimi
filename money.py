@@ -56,12 +56,10 @@ class Money:
         Use the currency digits to determine number of digits to show.
         """
         
-        if self.currency.symbol == self.currency.symbol:
+        if self.currency.symbol != None:
             return f"{self.currency.symbol}{self.amount:.2f}"
         else:
-            return f"{self.currency.code}{self.amount.digits}{self.amount:.3f}"
-###* ^^^PASSED!^^^      
-        
+            return f"{self.currency.code} {self.amount:.3f}"   
 
     def __repr__(self):
         return f"<Money {str(self)}>"
@@ -72,6 +70,8 @@ class Money:
         """
         return (type(self) == type(other) and self.amount == other.amount
                 and self.currency == other.currency)
+###* ^^^PASSED!^^^ 
+
 
     def add(self, other):
         """
